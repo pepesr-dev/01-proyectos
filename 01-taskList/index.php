@@ -1,3 +1,12 @@
+<?php 
+
+require_once __DIR__ . "/functions/dbconn.php";
+require_once __DIR__ . "/functions/dao.php";
+$pdo= connectDB();
+$tasks = getTasks($pdo);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,15 +15,31 @@
     <title>Lista de tareas</title>
 </head>
 <body>
+
     <header>
+        <img src="" alt="">
         <h1>Lista de tareas</h1>
         
     </header>
     <main>
+        <a href="./insert/form-insert-task.php">Insertar</a><br>
         
+        <table>
+            <thead>
+                <th>Tareas</th>
+                
+            </thead>
+            <tbody>
+                <?php foreach($tasks as $task): ?>
+                <tr>
+                    <td><?php echo $task['tarea']?></td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
     </main>
     <footer>
-        <p>PepeSR 2026</p>
+        <p>&copy; 2026 Lista de tareas</p>
     </footer>
 </body>
 </html>
