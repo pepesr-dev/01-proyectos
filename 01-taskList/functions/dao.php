@@ -32,5 +32,21 @@ function setTask(PDO $pdo, string $task):int | false{
         return false;
     }
 }
+
+function getTaskById(PDO $pdo, int $task_id){
+    $sql = "
+        SELECT id 
+        FROM tareas 
+        WHERE id = $task_id
+    ";
+    try{
+        $stmt = $pdo->query();
+    }catch(){
+
+    }
+}
+function delTask(){
+
+}
     
 ?>

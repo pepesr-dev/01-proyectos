@@ -34,6 +34,12 @@ $tasks = getTasks($pdo);
                 <tr>
                     <td><?php echo $task['tarea']?></td>
                 </tr>
+                <tr>
+                    <form action="./delete/confirm-delete.php" method="post">
+                        <input type="hidden" value="<?php echo $task['id']?>">
+                        <input type="submit" value="Eliminar">
+                    </form>
+                </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
