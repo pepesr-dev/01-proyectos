@@ -2,12 +2,19 @@
 require_once __DIR__ . "/../functions/dbconn.php";
 require_once __DIR__ . "/../functions/dao.php";
 
+$pdo = connectDB();
+
+
+
 if($_SERVER['REQUEST_METHOD']==="POST"){
     $task_id = (int) $_POST['id'] ?? 0;
 
     if(!empty($task_id)){
-        $task = 
+        $count_row = delTaskById($pdo, $task_id);
+    } else {
+        echo "Error: Eliminación fallida";
     }
+
 }
 ?>
 <!DOCTYPE html>
@@ -19,6 +26,7 @@ if($_SERVER['REQUEST_METHOD']==="POST"){
 </head>
 <body>
     <h1>Confirmar eliminación</h1>
+    <a href="./../index.php">Inicio</a>
     
 </body>
 </html>
