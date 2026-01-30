@@ -16,6 +16,25 @@ function getTasks(PDO $pdo): array | bool{
     }
 }
 
+function getTaskById(PDO $pdo,int $task_id):array|false{
+    $sql = "
+        SELECT id, tarea
+        FROM tareas 
+        WHERE id = :id
+    ";
+
+    try{
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([
+            ':id'=>$task_id
+        ]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }catch(\PDOException $e){
+        error_log($e->getMessage());
+        return false;
+    }
+}
+
 function setTask(PDO $pdo, string $task):int | false{
     $sql = "
     
@@ -52,7 +71,7 @@ function delTaskById(PDO $pdo, int $task_id): int|false{
     }
 }
     
-function updateById(PDO $pdo ,int $task_id, string $new_task):int|false{
+function updateTaskById(PDO $pdo ,int $task_id, string $new_task):int|false{
     $sql="
     UPDATE tareas 
     SET tarea = :task 

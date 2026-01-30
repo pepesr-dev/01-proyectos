@@ -26,6 +26,12 @@ if($_SERVER['REQUEST_METHOD']==="POST"){
 </head>
 <body>
     <h1>Confirmar eliminación</h1>
+
+    <?php 
+        if($count_row > 0){
+            echo "Tarea eliminada<br>";
+        }
+    ?>
     <a href="./../index.php">Inicio</a>
     
 </body>

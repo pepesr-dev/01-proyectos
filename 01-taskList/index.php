@@ -19,7 +19,7 @@ $tasks = getTasks($pdo);
 <body>
 
     <header>
-        <img src="" alt="">
+        <img src="" alt="logo">
         <h1>Lista de tareas</h1>
 
     </header>
@@ -35,6 +35,12 @@ $tasks = getTasks($pdo);
                 <?php foreach ($tasks as $task): ?>
                     <tr>
                         <td><?php echo $task['tarea']; ?></td>
+                        <td>
+                            <form action="./update/form-update.php" method="post">
+                                <input type="hidden" name="id" value="<?php echo $task['id']; ?>">
+                                <input type="submit" value="Editar">
+                            </form>
+                        </td>
                         <td>
                             <form action="./delete/confirm-delete.php" method="post">
                                 <input type="hidden" name="id" value="<?php echo $task['id']; ?>">
