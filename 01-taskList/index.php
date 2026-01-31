@@ -1,14 +1,18 @@
 <?php
-
+//requires
 require_once __DIR__ . "/functions/dbconn.php";
 require_once __DIR__ . "/functions/dao.php";
+
+//DB conexiones
 $pdo = connectDB();
+
+//getters
 $tasks = getTasks($pdo);
 
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -17,30 +21,36 @@ $tasks = getTasks($pdo);
 </head>
 
 <body>
-
     <header>
         <img src="" alt="logo">
         <h1>Lista de tareas</h1>
 
     </header>
     <main>
+        <!--Navegación-->
         <a href="./insert/form-insert-task.php">Insertar</a><br>
+
 
         <table>
             <thead>
                 <th>Tareas</th>
-
             </thead>
+
             <tbody>
+                <!--Mostrar tareas-->
                 <?php foreach ($tasks as $task): ?>
                     <tr>
                         <td><?php echo $task['tarea']; ?></td>
+
+                        <!--Editar tarea-->
                         <td>
                             <form action="./update/form-update.php" method="post">
                                 <input type="hidden" name="id" value="<?php echo $task['id']; ?>">
                                 <input type="submit" value="Editar">
                             </form>
                         </td>
+
+                        <!--Eliminar tarea-->
                         <td>
                             <form action="./delete/confirm-delete.php" method="post">
                                 <input type="hidden" name="id" value="<?php echo $task['id']; ?>">
@@ -48,11 +58,13 @@ $tasks = getTasks($pdo);
                             </form>
                         </td>
                     </tr>
-                    
+
                 <?php endforeach; ?>
             </tbody>
         </table>
     </main>
+
+
     <footer>
         <p>&copy; 2026 Lista de tareas</p>
     </footer>

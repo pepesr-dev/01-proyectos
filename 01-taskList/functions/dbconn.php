@@ -13,10 +13,11 @@ function connectDB(): PDO
 
     try {
         $pdo = new PDO(DB_DSN, DB_USER, DB_PASS, $options);
-        echo "Conexión realizada con exito <br>";
+        // echo "Conexión realizada con exito <br>";
         return $pdo;
     } catch (\PDOException $e) {
-        echo "Error: " . $e->getMessage();
+        //php -S localhost:8000
+        error_log($e->getMessage());
         die();
     }
 }
