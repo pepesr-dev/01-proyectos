@@ -18,6 +18,7 @@ $tasks = getTasks($pdo);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de tareas</title>
+    <link rel="stylesheet" href="./src/css/styles.css">
 </head>
 
 <body>
@@ -29,7 +30,7 @@ $tasks = getTasks($pdo);
     <main>
         <!--Navegación-->
         <a href="./insert/form-insert-task.php">Insertar</a><br>
-
+    
 
         <table>
             <thead>

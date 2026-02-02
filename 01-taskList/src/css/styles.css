@@ -1,0 +1,58 @@
+
+:root {
+    --background-color:#000;
+    --primary-color:#fff;
+    --secondary-color: #1A1A1A;
+    --action-color: #0033FF;
+    --error-color: #FF0000;
+}
+
+@font-face{
+    font-family: 'Space Grotesk';
+    src: url('../fonts/SpaceGrotesk-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+@font-face{
+    font-family: 'Inter';
+    src: url('../fonts/Inter-VariableFont_opsz\,wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+@font-face{
+    font-family: 'Michroma';
+    src: url('../fonts/Michroma-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-display: normal;
+}
+/*
+RESETS
+*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 18px;
+    font-family: 'Inter',Arial, Helvetica, sans-serif;
+}
+h1, h2, h3,h4, h5, h6 {
+    font-family: 'Space Grotesk', Arial, Helvetica, sans-serif;
+}
+.error{
+    color: var(--error-color);
+    font-family: 'Michroma',Arial, Helvetica, sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+}
