@@ -23,7 +23,7 @@ $tasks = getTasks($pdo);
 
 <body>
     <header>
-        <img src="" alt="logo">
+        <img class="logo" src="./src/icons/TaskList-v9.svg" alt="logo">
         <h1>Lista de tareas</h1>
 
     </header>
@@ -47,7 +47,9 @@ $tasks = getTasks($pdo);
                         <td>
                             <form action="./update/form-update.php" method="post">
                                 <input type="hidden" name="id" value="<?php echo $task['id']; ?>">
-                                <input type="submit" value="Editar">
+                                <button type="submit">
+                                    <img class="form__svg" src="./src/icons/edit.svg"></img>
+                                </button>
                             </form>
                         </td>
 
@@ -55,7 +57,9 @@ $tasks = getTasks($pdo);
                         <td>
                             <form action="./delete/confirm-delete.php" method="post">
                                 <input type="hidden" name="id" value="<?php echo $task['id']; ?>">
-                                <input type="submit" value="Eliminar">
+                                <button type="submit">
+                                    <img class="form__svg" src="./src/icons/delete.svg"></img>
+                                </button>
                             </form>
                         </td>
                     </tr>
@@ -67,7 +71,7 @@ $tasks = getTasks($pdo);
 
 
     <footer>
-        <p>&copy; 2026 Lista de tareas</p>
+        <p>&copy; PepeSR | 2025 - 26 Lista de tareas</p>
     </footer>
 </body>
 
