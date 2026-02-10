@@ -29,7 +29,13 @@ $tasks = getTasks($pdo);
     </header>
     <main>
         <!--Navegación-->
-        <a href="./insert/form-insert-task.php">Insertar</a><br>
+        
+            <a href="./insert/form-insert-task.php">
+                <img class="insert__svg" src="./src/icons/add.svg" alt="insert-icon">
+            </a>
+            <br>
+            
+        
     
 
         <table>
@@ -71,7 +77,7 @@ $tasks = getTasks($pdo);
 
 
     <footer>
-        <p>&copy; PepeSR | 2025 - 26 Lista de tareas</p>
+        <p>&copy; PepeSR 2025-26 Lista de tareas</p>
     </footer>
 </body>
 

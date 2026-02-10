@@ -23,16 +23,24 @@ if($_SERVER['REQUEST_METHOD']==="POST"){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de tareas</title>
+    <link rel="stylesheet" href="../src/css/styles.css">
 </head>
 <body>
-    <h1>Confirmar eliminación</h1>
+    <header>
+        <img class="logo" src="../src/icons/TaskList-v9.svg" alt="logo">
+        <h1>Lista de tareas</h1>
 
-    <?php 
-        if($count_row > 0){
-            echo "Tarea eliminada<br>";
-        }
-    ?>
-    <a href="./../index.php">Inicio</a>
+    </header>
+    <main>
+        <h1>Confirmar eliminación</h1>
+        
+        <?php 
+            if($count_row > 0){
+                echo "Tarea eliminada<br>";
+            }
+        ?>
+        <a href="./../index.php">Inicio</a>
+    </main>
     
 </body>
 </html>

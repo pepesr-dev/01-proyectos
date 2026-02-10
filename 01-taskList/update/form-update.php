@@ -40,35 +40,42 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de tareas</title>
+    <link rel="stylesheet" href="../src/css/styles.css">
 </head>
+<header>
+        <img class="logo" src="../src/icons/TaskList-v9.svg" alt="logo">
+        <h1>Lista de tareas</h1>
 
+    </header>
 <body>
 
-    <!--Mostrar tarea si los datos son correctos-->
-    <?php if ($task_data): ?>
-        <h1>Tarea encontrada:</h1>
-
-        <p>ID: <?php echo $task_data['id'];  ?></p>
-        <p>Tarea: <?php echo htmlspecialchars($task_data['tarea']);  ?></p>
-
+    <main>
+        <!--Mostrar tarea si los datos son correctos-->
+        <?php if ($task_data): ?>
+            <h1>Tarea encontrada:</h1>
+        
+            <p>ID: <?php echo $task_data['id'];  ?></p>
+            <p>Tarea: <?php echo htmlspecialchars($task_data['tarea']);  ?></p>
+        
+            <br>
+        
+            <!--Editar tarea-->
+            <form action="./proces-update.php" method="post">
+                <input type="hidden" name="id" value="<?php echo $task_data['id']; ?>">
+        
+                <!--Required / Value / htmlspecialchars-->
+                <label>Tarea Nueva: <input type="text" name="task" value="<?php echo htmlspecialchars($task_data['tarea']); ?>" required></label>
+                <input type="submit" value="Guardar cambios">
+            </form>
+        
+        
+        <?php else: ?>
+            <p>No se ha podido cargar la información de la tarea.</p>
+        <?php endif; ?>
         <br>
-
-        <!--Editar tarea-->
-        <form action="./proces-update.php" method="post">
-            <input type="hidden" name="id" value="<?php echo $task_data['id']; ?>">
-
-            <!--Required / Value / htmlspecialchars-->
-            <label>Tarea Nueva: <input type="text" name="task" value="<?php echo htmlspecialchars($task_data['tarea']); ?>" required></label>
-            <input type="submit" value="Guardar cambios">
-        </form>
-
-
-    <?php else: ?>
-        <p>No se ha podido cargar la información de la tarea.</p>
-    <?php endif; ?>
-
-
-    <a href="../index.php">Inicio</a>
+        
+        <a href="../index.php">Inicio</a>
+    </main>
 </body>
 
 </html>
