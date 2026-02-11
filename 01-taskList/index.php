@@ -22,63 +22,65 @@ $tasks = getTasks($pdo);
 </head>
 
 <body>
-    <header>
-        <img class="logo" src="./src/icons/TaskList-v9.svg" alt="logo">
-        <h1>Lista de tareas</h1>
+    <div class="containner">
+        <header class="header">
+            <img class="logo" src="./src/icons/TaskList-v9.svg" alt="logo">
+            <h1>Lista de tareas</h1>
 
-    </header>
-    <main>
-        <!--Navegación-->
-        
+        </header>
+        <main class="main">
+            <!--Navegación-->
+
             <a href="./insert/form-insert-task.php">
                 <img class="insert__svg" src="./src/icons/add.svg" alt="insert-icon">
             </a>
             <br>
-            
-        
-    
-
-        <table>
-            <thead>
-                <th>Tareas</th>
-            </thead>
-
-            <tbody>
-                <!--Mostrar tareas-->
-                <?php foreach ($tasks as $task): ?>
-                    <tr>
-                        <td><?php echo $task['tarea']; ?></td>
-
-                        <!--Editar tarea-->
-                        <td>
-                            <form action="./update/form-update.php" method="post">
-                                <input type="hidden" name="id" value="<?php echo $task['id']; ?>">
-                                <button type="submit">
-                                    <img class="form__svg" src="./src/icons/edit.svg"></img>
-                                </button>
-                            </form>
-                        </td>
-
-                        <!--Eliminar tarea-->
-                        <td>
-                            <form action="./delete/confirm-delete.php" method="post">
-                                <input type="hidden" name="id" value="<?php echo $task['id']; ?>">
-                                <button type="submit">
-                                    <img class="form__svg" src="./src/icons/delete.svg"></img>
-                                </button>
-                            </form>
-                        </td>
-                    </tr>
-
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    </main>
 
 
-    <footer>
-        <p>&copy; PepeSR 2025-26 Lista de tareas</p>
-    </footer>
+
+
+            <table>
+                <thead>
+                    <th>Tareas</th>
+                </thead>
+
+                <tbody>
+                    <!--Mostrar tareas-->
+                    <?php foreach ($tasks as $task): ?>
+                        <tr>
+                            <td><?php echo $task['tarea']; ?></td>
+
+                            <!--Editar tarea-->
+                            <td>
+                                <form action="./update/form-update.php" method="post">
+                                    <input type="hidden" name="id" value="<?php echo $task['id']; ?>">
+                                    <button type="submit">
+                                        <img class="form__svg" src="./src/icons/edit.svg"></img>
+                                    </button>
+                                </form>
+                            </td>
+
+                            <!--Eliminar tarea-->
+                            <td>
+                                <form action="./delete/confirm-delete.php" method="post">
+                                    <input type="hidden" name="id" value="<?php echo $task['id']; ?>">
+                                    <button type="submit">
+                                        <img class="form__svg" src="./src/icons/delete.svg"></img>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </main>
+
+
+        <footer class="footer">
+            <p>&copy; PepeSR 2025-26 Lista de tareas</p>
+        </footer>
+    </div>
 </body>
 
 </html>
