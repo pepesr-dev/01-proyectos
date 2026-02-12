@@ -26,21 +26,28 @@ if($_SERVER['REQUEST_METHOD']==="POST"){
     <link rel="stylesheet" href="../src/css/styles.css">
 </head>
 <body>
-    <header>
-        <img class="logo" src="../src/icons/TaskList-v9.svg" alt="logo">
-        <h1>Lista de tareas</h1>
-
-    </header>
-    <main>
-        <h1>Confirmar eliminación</h1>
+    <div class="containner">
+        <header>
+            <a href="../index.php">
+                <img class="logo" src="../src/icons/TaskList-v9.svg" alt="logo">
+            </a>
+            <h1>Lista de tareas</h1>
         
-        <?php 
-            if($count_row > 0){
-                echo "Tarea eliminada<br>";
-            }
-        ?>
-        <a href="./../index.php">Inicio</a>
-    </main>
+        </header>
+        <main>
+            <h1>Confirmar eliminación</h1>
+            
+            <?php 
+                if($count_row > 0){
+                    echo "Tarea eliminada<br>";
+                }
+            ?>
+            <a href="./../index.php">Inicio</a>
+        </main>
+        <footer class="footer">
+            <p>&copy; PepeSR 2025-26 Lista de tareas</p>
+        </footer>
+    </div>
     
 </body>
 </html>

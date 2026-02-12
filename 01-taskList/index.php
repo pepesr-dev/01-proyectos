@@ -24,7 +24,9 @@ $tasks = getTasks($pdo);
 <body>
     <div class="containner">
         <header class="header">
-            <img class="logo" src="./src/icons/TaskList-v9.svg" alt="logo">
+            <a href="./index.php">
+                <img class="logo" src="./src/icons/TaskList-v9.svg" alt="logo">
+            </a>
             <h1>Lista de tareas</h1>
 
         </header>

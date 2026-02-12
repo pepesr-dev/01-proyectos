@@ -42,40 +42,49 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Lista de tareas</title>
     <link rel="stylesheet" href="../src/css/styles.css">
 </head>
-<header>
-        <img class="logo" src="../src/icons/TaskList-v9.svg" alt="logo">
-        <h1>Lista de tareas</h1>
 
-    </header>
 <body>
+    <div class="containner">
+        <header>
+            <a href="../index.php">
+                <img class="logo" src="../src/icons/TaskList-v9.svg" alt="logo">
+            </a>
+            <h1>Lista de tareas</h1>
 
-    <main>
-        <!--Mostrar tarea si los datos son correctos-->
-        <?php if ($task_data): ?>
-            <h1>Tarea encontrada:</h1>
-        
-            <p>ID: <?php echo $task_data['id'];  ?></p>
-            <p>Tarea: <?php echo htmlspecialchars($task_data['tarea']);  ?></p>
-        
+        </header>
+
+
+        <main class="main">
+            <!--Mostrar tarea si los datos son correctos-->
+            <?php if ($task_data): ?>
+                <h1>Tarea encontrada:</h1>
+
+                <p>ID: <?php echo $task_data['id'];  ?></p>
+                <p>Tarea: <?php echo htmlspecialchars($task_data['tarea']);  ?></p>
+
+                <br>
+
+                <!--Editar tarea-->
+                <form action="./proces-update.php" method="post">
+                    <input type="hidden" name="id" value="<?php echo $task_data['id']; ?>">
+
+                    <!--Required / Value / htmlspecialchars-->
+                    <label>Tarea Nueva: <input type="text" name="task" value="<?php echo htmlspecialchars($task_data['tarea']); ?>" required></label>
+                    <input type="submit" value="Guardar cambios">
+                </form>
+
+
+            <?php else: ?>
+                <p>No se ha podido cargar la información de la tarea.</p>
+            <?php endif; ?>
             <br>
-        
-            <!--Editar tarea-->
-            <form action="./proces-update.php" method="post">
-                <input type="hidden" name="id" value="<?php echo $task_data['id']; ?>">
-        
-                <!--Required / Value / htmlspecialchars-->
-                <label>Tarea Nueva: <input type="text" name="task" value="<?php echo htmlspecialchars($task_data['tarea']); ?>" required></label>
-                <input type="submit" value="Guardar cambios">
-            </form>
-        
-        
-        <?php else: ?>
-            <p>No se ha podido cargar la información de la tarea.</p>
-        <?php endif; ?>
-        <br>
-        
-        <a href="../index.php">Inicio</a>
-    </main>
+
+            <a href="../index.php">Inicio</a>
+        </main>
+        <footer class="footer">
+            <p>&copy; PepeSR 2025-26 Lista de tareas</p>
+        </footer>
+    </div>
 </body>
 
 </html>

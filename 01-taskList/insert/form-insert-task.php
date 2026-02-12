@@ -22,7 +22,9 @@
                 <input type="submit" value="Insertar">
             </form>
             <br>
-            <a href="../index.php">Inicio</a>
+            <nav>
+                <a href="../index.php">Inicio</a>
+            </nav>
         </main>
         <footer class="footer">
             <p>&copy; PepeSR 2025-26 Lista de tareas</p>
