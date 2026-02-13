@@ -10,7 +10,9 @@
 <body>
     <div class="containner">
         <header class="header">
-            <img class="logo" src="../src/icons/TaskList-v9.svg" alt="logo">
+            <a href="../index.php">
+                <img class="logo" src="../src/icons/TaskList-v9.svg" alt="logo">
+            </a>
             <h1>Lista de tareas</h1>
         
         </header>
@@ -22,10 +24,11 @@
                 <input type="submit" value="Insertar">
             </form>
             <br>
-            <nav>
+            <nav class="nav">
                 <a href="../index.php">Inicio</a>
             </nav>
         </main>
+        
         <footer class="footer">
             <p>&copy; PepeSR 2025-26 Lista de tareas</p>
         </footer>

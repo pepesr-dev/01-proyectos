@@ -43,7 +43,11 @@ html {
 h1, h2, h3,h4, h5, h6 {
     font-family: 'Space Grotesk', Arial, Helvetica, sans-serif;
 }
-
+a {
+    text-decoration: none;
+    color: inherit;
+    text-decoration: underline;
+}
 button {
     background: none;
     border: none;
