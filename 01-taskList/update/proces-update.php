@@ -43,20 +43,38 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de tareas</title>
+    <link rel="stylesheet" href="../src/css/styles.css">
 </head>
 <body>
-    <!--Mostrar tarea si los datos son correctos-->
-    <h1>Resultado de la actualización</h1>
-    
-    <?php if($row_count > 0): ?>
+    <div class="containner">
+        <header class="header">
+                <a href="../index.php">
+                    <img class="logo" src="../src/icons/TaskList-v9.svg" alt="logo">
+                </a>
+                <h1>Lista de tareas</h1>
         
-        <p>Tarea almacenada con exito.</p>
-        <p>Tarea nueva: <?php echo htmlspecialchars($task_data['tarea']); ?></p>
-    <?php else: ?>
-        <p>La tarea no pudo ser actualizada.</p>
-    <?php endif; ?>
-
-
-    <a href="../index.php">Inicio</a>
+            </header>
+        <main class="main">
+            <!--Mostrar tarea si los datos son correctos-->
+            <h1>Resultado de la actualización</h1>
+            
+            <?php if($row_count > 0): ?>
+                
+                <p>Tarea almacenada con exito.</p>
+                <p>Tarea nueva: <?php echo htmlspecialchars($task_data['tarea']); ?></p>
+            <?php else: ?>
+                <p>La tarea no pudo ser actualizada.</p>
+            <?php endif; ?>
+                    <nav>
+                        <a href="../index.php">Inicio</a>
+                        
+                    </nav>
+        </main>
+        
+        
+        <footer class="footer">
+                <p>&copy; PepeSR 2025-26 Lista de tareas</p>
+            </footer>
+    </div>
 </body>
 </html>
